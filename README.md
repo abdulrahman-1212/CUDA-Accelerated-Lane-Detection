@@ -67,41 +67,6 @@ Find your GPU's compute capability at https://developer.nvidia.com/cuda-gpus
 ./lane_detection input.mp4 output.mp4
 ```
 
-### Benchmark (no video file needed)
-```bash
-# width height iterations
-./lane_bench 1920 1080 1000
-```
-
-## Tuning knobs
-
-All tuning constants are in the relevant files:
-
-| Parameter | File | Default |
-|-----------|------|---------|
-| Gaussian kernel size | `cuda_kernels.cu` | 5×5 |
-| Canny low threshold | `lane_detector.hpp` | 50 |
-| Canny high threshold | `lane_detector.hpp` | 150 |
-| Hough threshold | `hough_cpu.hpp` | 20 |
-| Hough min line length | `hough_cpu.hpp` | 20 |
-| Hough max line gap | `hough_cpu.hpp` | 500 |
-| ROI trapezoid | `cuda_kernels.cu` | same as Python |
-| Lane line colour | `lane_detector.hpp` | Red (255,0,0) |
-| Lane line thickness | `lane_detector.hpp` | 12 px |
-| CUDA block size | `lane_detector.hpp` | 16×16 |
-
-## Performance
-
-Typical throughput on a single frame (1280×720):
-
-| Hardware | FPS |
-|----------|-----|
-| RTX 3080 | ~850 |
-| RTX 2070 | ~520 |
-| GTX 1080 Ti | ~380 |
-
-(CPU Python baseline: ~15 fps on the same footage.)
-
 ## File layout
 
 ```
