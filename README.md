@@ -1,6 +1,6 @@
 # CUDA Lane Detection
 
-A CUDA-accelerated C++ port of the Python OpenCV lane-detection pipeline.
+A CUDA-accelerated C++ OpenCV lane-detection pipeline.
 
 ## Architecture
 
